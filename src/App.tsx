@@ -66,7 +66,7 @@ function App() {
 
         {/* Weather Analysis and Chart */}
         {chartData.length > 0 && (
-          <div className="space-y-8 pb-16 animate-in fade-in slide-in-from-bottom-4 duration-700 grid lg:grid-cols-3 gap-5 bg-white">
+          <div className="space-y-8 pb-16 animate-in fade-in slide-in-from-bottom-4 duration-700 lg:grid lg:grid-cols-3 gap-5 bg-white">
             <div className="col-span-2">
               <GlowingLineChart chartData={chartData} chartConfig={chartConfig} />
             </div>

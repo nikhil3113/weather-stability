@@ -31,7 +31,7 @@ export function GlowingLineChart({ chartData, chartConfig }: GlowingLineChartPro
   const minTemp = Math.min(...chartData.map(d => d.temperature_2m_min));
 
   return (
-    <Card className="overflow-hidden bg-white/80 backdrop-blur-sm">
+    <Card className="overflow-hidden bg-white/80 backdrop-blur-sm px-0">
       <CardHeader className="">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
@@ -56,7 +56,7 @@ export function GlowingLineChart({ chartData, chartConfig }: GlowingLineChartPro
           </div>
         </div>
       </CardHeader>
-      <CardContent className="p-6">
+      <CardContent className="p-0 sm:p-6">
         {/* Temperature Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div className="flex items-center gap-3 p-4 bg-gradient-to-br from-red-50 to-orange-50 rounded-xl border border-red-100">
@@ -89,8 +89,8 @@ export function GlowingLineChart({ chartData, chartConfig }: GlowingLineChartPro
         </div>
 
         {/* Chart */}
-        <div className="bg-gradient-to-br from-slate-50 to-purple-50/30 rounded-2xl p-4 border border-purple-100">
-          <ChartContainer config={chartConfig} className="h-[400px] w-full">
+        <div className="bg-gradient-to-br from-slate-50 to-purple-50/30 rounded-2xl p-0 sm:p-4 border border-purple-100">
+          <ChartContainer config={chartConfig} className=" h-auto sm:h-[400px] w-full">
             <LineChart
               accessibilityLayer
               data={chartData}
@@ -101,9 +101,9 @@ export function GlowingLineChart({ chartData, chartConfig }: GlowingLineChartPro
                 bottom: 12,
               }}
             >
-              <CartesianGrid 
-                strokeDasharray="3 3" 
-                vertical={false} 
+              <CartesianGrid
+                strokeDasharray="3 3"
+                vertical={false}
                 stroke="#e2e8f0"
                 opacity={0.5}
               />
@@ -124,21 +124,21 @@ export function GlowingLineChart({ chartData, chartConfig }: GlowingLineChartPro
               />
               <ChartTooltip
                 cursor={{ stroke: '#c084fc', strokeWidth: 1.5, strokeDasharray: '5 5' }}
-                content={<ChartTooltipContent 
+                content={<ChartTooltipContent
                   labelFormatter={(value) => new Date(value).toLocaleDateString('en', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-                />} 
+                />}
               />
               <Line
                 dataKey="temperature_2m_max"
                 type="monotone"
                 stroke="#ef4444"
-                dot={{ 
-                  fill: '#ef4444', 
-                  strokeWidth: 2, 
+                dot={{
+                  fill: '#ef4444',
+                  strokeWidth: 2,
                   r: 5,
                   stroke: '#fff'
                 }}
-                activeDot={{ 
+                activeDot={{
                   r: 7,
                   fill: '#ef4444',
                   stroke: '#fff',
@@ -151,13 +151,13 @@ export function GlowingLineChart({ chartData, chartConfig }: GlowingLineChartPro
                 dataKey="temperature_2m_min"
                 type="monotone"
                 stroke="#3b82f6"
-                dot={{ 
-                  fill: '#3b82f6', 
-                  strokeWidth: 2, 
+                dot={{
+                  fill: '#3b82f6',
+                  strokeWidth: 2,
                   r: 5,
                   stroke: '#fff'
                 }}
-                activeDot={{ 
+                activeDot={{
                   r: 7,
                   fill: '#3b82f6',
                   stroke: '#fff',
