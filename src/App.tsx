@@ -93,7 +93,7 @@ function App() {
                   Ready to explore the weather?
                 </EmptyTitle>
                 <EmptyDescription className="text-base text-gray-600 max-w-sm">
-                  Enter a city name above to get a detailed 7-day forecast with stability analysis
+                  Enter a city name above to get a detailed 30-day forecast with stability analysis
                 </EmptyDescription>
               </EmptyHeader>
 
